@@ -1,1 +1,1 @@
-web: java -jar target/academy-of-happiness.jar
+web java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/*.jar
