@@ -14,7 +14,7 @@
     <name>academy-of-happiness</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -36,52 +36,10 @@
 
     <build>
         <finalName>academy-of-happiness</finalName>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh</artifactId>
-                <version>3.4.3</version>
-            </extension>
-        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>wagon-maven-plugin</artifactId>
-                <version>2.0.2</version>
-                <executions>
-                    <execution>
-                        <id>1</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>upload</goal>
-                        </goals>
-                        <configuration>
-                            <serverId>ocean</serverId>
-                            <fromDir>target</fromDir>
-                            <includes>academy-of-happiness.jar</includes>
-                            <url>161.35.197.9</url>
-                            <toDir>/root/projects/academy-of-happiness/</toDir>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>2</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>sshexec</goal>
-                        </goals>
-                        <configuration>
-                            <serverId>ocean</serverId>
-                            <url>161.35.197.9</url>
-                            <commands>
-                                <command>sh /root/projects/academy-of-happiness/restart.sh</command>
-                            </commands>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
 
