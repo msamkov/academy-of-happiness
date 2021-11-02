@@ -10,7 +10,7 @@
     </parent>
     <groupId>ru.multicon</groupId>
     <artifactId>academy-of-happiness</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>academy-of-happiness</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -40,6 +40,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>build-info</id>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 
